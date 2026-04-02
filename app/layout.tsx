@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'home buying',
     'home selling'
   ],
-  metadataBase: new URL('https://jonahgroupre.com'),
+  metadataBase: new URL('https://www.jonahgroupre.com'),
   authors: [{ name: 'Eileen Jonah' }],
   creator: 'Eileen Jonah',
   publisher: 'Century 21 North East',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://jonahgroupre.com',
+    url: 'https://www.jonahgroupre.com',
     title: 'Eileen Jonah - Realtor® | Massachusetts Real Estate Agent',
     description:
       'Licensed Realtor® with Century 21 North East specializing in residential property sales and purchases',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     ]
   },
   alternates: {
-    canonical: 'https://jonahgroupre.com'
+    canonical: 'https://www.jonahgroupre.com'
   }
 }
 
@@ -70,7 +70,7 @@ const realEstateJsonLd = {
     image:
       'https://firebasestorage.googleapis.com/v0/b/devon-hunt-nextjs.appspot.com/o/images%2Feileen-rp-4.png?alt=media&token=a9b5b5e8-1a69-4baa-8a86-49addbe1f973',
     jobTitle: 'Realtor®',
-    url: 'https://jonahgroupre.com',
+    url: 'https://www.jonahgroupre.com',
     affiliation: {
       '@type': 'Organization',
       name: 'Century 21 North East'
