@@ -1,6 +1,7 @@
 import { getAgentListings } from './lib/actions/getAgentListings'
 import { getListings } from './lib/actions/getListings'
 import HomeClient from './components/pages/HomeClient'
+import { Suspense } from 'react'
 
 export const revalidate = 3600
 
@@ -16,5 +17,9 @@ export default async function HomePage() {
     page: 1
   })
 
-  return <HomeClient agentListings={agentListings} allListings={allListings} />
+  return (
+    <Suspense fallback={null}>
+      <HomeClient agentListings={agentListings} allListings={allListings} />
+    </Suspense>
+  )
 }

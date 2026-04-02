@@ -1,5 +1,6 @@
 import { getListings } from '@/app/lib/actions/getListings'
 import ListingsClient from '@/app/components/pages/ListingsClient'
+import { Suspense } from 'react'
 
 interface SearchParams {
   page?: string
@@ -261,5 +262,9 @@ export default async function ListingsPage({
     )
   }
 
-  return <ListingsClient data={data} />
+  return (
+    <Suspense fallback={null}>
+      <ListingsClient data={data} />
+    </Suspense>
+  )
 }

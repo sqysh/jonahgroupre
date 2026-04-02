@@ -1,5 +1,6 @@
 import { PublicSoldClient } from '@/app/components/pages/PublicSoldClient'
 import { getAgentListings } from '@/app/lib/actions/getAgentListings'
+import { Suspense } from 'react'
 
 export default async function PublicSoldPage({
   searchParams
@@ -13,5 +14,9 @@ export default async function PublicSoldPage({
     page: page ? parseInt(page) : 1
   })
 
-  return <PublicSoldClient data={result} />
+  return (
+    <Suspense fallback={null}>
+      <PublicSoldClient data={result} />
+    </Suspense>
+  )
 }
