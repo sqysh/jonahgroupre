@@ -1,5 +1,3 @@
-'use server'
-
 const REPLIERS_API_KEY = process.env.REPLIERS_API_KEY!
 const EILEEN_BOARD_AGENT_ID = 'C8000274'
 

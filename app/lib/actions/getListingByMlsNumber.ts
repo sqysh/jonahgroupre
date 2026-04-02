@@ -1,5 +1,3 @@
-'use server'
-
 export interface RepliersListingResponse {
   mlsNumber: string
   resource: string

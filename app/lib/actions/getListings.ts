@@ -1,5 +1,3 @@
-'use server'
-
 interface GetListingsParams {
   page?: number
   resultsPerPage?: number
