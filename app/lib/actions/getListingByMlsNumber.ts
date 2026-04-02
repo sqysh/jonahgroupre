@@ -24,7 +24,7 @@ export async function getListingByMlsNumber(mlsNumber: string): Promise<any | nu
           accept: 'application/json',
           'REPLIERS-API-KEY': process.env.REPLIERS_API_KEY || ''
         },
-        cache: 'no-store'
+        next: { revalidate: 3600 }
       }
     )
 
