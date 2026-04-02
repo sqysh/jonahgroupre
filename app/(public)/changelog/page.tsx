@@ -17,6 +17,40 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
+    version: '2.0.3',
+    date: '2026-04-02',
+    changes: [
+      {
+        type: 'feature',
+        title: 'Sold Listings Page',
+        description:
+          "Added a dedicated /sold page showcasing Eileen's sold properties, powered by the Repliers API filtered by her MLS board agent ID.",
+        impact: 'high'
+      },
+      {
+        type: 'improvement',
+        title: 'Agent Listings API Filtering',
+        description:
+          'Switched from client-side name filtering across all MA listings to server-side filtering using boardAgentId=C8000274, eliminating unnecessary data fetching.',
+        impact: 'high'
+      },
+      {
+        type: 'ui',
+        title: 'Sold Nav Link',
+        description:
+          'Added Sold to the main navigation between Listings and Services, with correct active state handling.',
+        impact: 'low'
+      },
+      {
+        type: 'refactor',
+        title: 'Simplified getAgentListings Server Action',
+        description:
+          'Removed manual multi-page fetching and agent name filtering in favor of direct server-side filtering via boardAgentId, reducing the action from ~60 lines to ~47.',
+        impact: 'medium'
+      }
+    ]
+  },
+  {
     version: '2.0.2',
     date: '2026-03-05',
     changes: [

@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic'
 
-import { getAgentListings } from './actions/getAgentListings'
-import { getListings } from './actions/getListings'
+import { getAgentListings } from './lib/actions/getAgentListings'
+import { getListings } from './lib/actions/getListings'
 import HomeClient from './components/pages/HomeClient'
 
 export default async function HomePage() {

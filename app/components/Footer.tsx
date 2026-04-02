@@ -1,12 +1,12 @@
 'use client'
 
 import servicedCities from '@/app/lib/constants/serviced-cities'
-import headerLinksData from '@/app/lib/utils/header-links-data'
+import { headerLinksData } from '@/app/lib/utils/navigation'
 import Link from 'next/link'
 import { eileenInsta } from '@/app/lib/constants/social-media-links'
 import { useRouter } from 'next/navigation'
 import useCustomPathname from '@/app/lib/utils/useCustomPathname'
-import { ChevronRight, Mail, MapPin, Phone, PictureInPicture } from 'lucide-react'
+import { ChevronRight, Mail, MapPin, Phone } from 'lucide-react'
 import { logoOrangeLines } from './common/styles'
 import Logo from './common/Logo'
 
@@ -39,6 +39,7 @@ const Footer = () => {
     '/contact',
     '/search'
   ]
+
   const isRouteMatched = routes.some((route) =>
     typeof route === 'string' ? route === pathname : route.test(pathname)
   )

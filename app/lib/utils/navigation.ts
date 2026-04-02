@@ -1,6 +1,6 @@
 import { HeaderLinkProps } from '../types/header-types'
 
-const headerLinksData = (path: string): HeaderLinkProps[] => [
+export const headerLinksData = (path: string): HeaderLinkProps[] => [
   {
     textKey: 'Home',
     linkKey: '/',
@@ -14,7 +14,12 @@ const headerLinksData = (path: string): HeaderLinkProps[] => [
   {
     textKey: 'Listings',
     linkKey: '/listings?page=1&county=Essex',
-    active: path.includes('/listing')
+    active: path.includes('/listing') && !path.includes('/sold')
+  },
+  {
+    textKey: 'Sold',
+    linkKey: '/sold',
+    active: path.includes('/sold')
   },
   {
     textKey: 'Services',
@@ -27,5 +32,3 @@ const headerLinksData = (path: string): HeaderLinkProps[] => [
     active: path === '/contact'
   }
 ]
-
-export default headerLinksData

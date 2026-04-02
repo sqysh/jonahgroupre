@@ -1,4 +1,4 @@
-import { getListings } from '@/app/actions/getListings'
+import { getListings } from '@/app/lib/actions/getListings'
 import ListingsClient from '@/app/components/pages/ListingsClient'
 
 interface SearchParams {

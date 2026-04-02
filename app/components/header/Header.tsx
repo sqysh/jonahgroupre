@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import headerLinksData from '../../lib/utils/header-links-data'
 import HeaderLink from './HeaderLink'
 import Logo from '../common/Logo'
 import { logoOrangeLines } from '../common/styles'
@@ -12,6 +11,7 @@ import { Menu, Phone } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { headerVariants, iconVariants, topBarVariants } from '@/app/lib/constants/motion'
 import { InstagramIcon } from '@/public/svg/social-media'
+import { headerLinksData } from '@/app/lib/utils/navigation'
 
 const Header = () => {
   const dispatch = useAppDispatch()

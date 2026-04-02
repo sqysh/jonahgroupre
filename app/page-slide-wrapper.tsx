@@ -2,7 +2,7 @@
 
 import { FC } from 'react'
 import Header from './components/header/Header'
-import NavigationDrawer from './components/NavigationDrawer'
+import { NavigationDrawer } from './components/NavigationDrawer'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import { useHeaderSeletor } from './lib/redux/store'
 import useScrollToTop from '@/app/lib/hooks/useScrollTop'
