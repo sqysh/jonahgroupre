@@ -1,8 +1,8 @@
-export const dynamic = 'force-dynamic'
-
 import { getAgentListings } from './lib/actions/getAgentListings'
 import { getListings } from './lib/actions/getListings'
 import HomeClient from './components/pages/HomeClient'
+
+export const revalidate = 3600
 
 export default async function HomePage() {
   // Get Eileen's active listings
