@@ -208,8 +208,3 @@ export interface RepliersListing {
     lockerNumber: string | null
   }
 }
-
-interface RepliersListingsResponse {
-  listings: RepliersListing[]
-  totalCount?: number
-}

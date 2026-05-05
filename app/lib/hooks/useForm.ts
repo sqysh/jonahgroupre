@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { Errors, Inputs, UseFormHook } from '../types/form-types'
 
 const useForm = (fields: string[], data?: Inputs): UseFormHook => {
@@ -16,19 +16,19 @@ const useForm = (fields: string[], data?: Inputs): UseFormHook => {
 
   const [inputs, setInputs] = useState<Inputs>(initialInputs)
   const [errors, setErrors] = useState<Errors>({})
-  const [initialized, setInitialized] = useState(false)
+
+  const initRef = useRef(false)
 
   useEffect(() => {
-    if (data && !initialized) {
+    if (data && !initRef.current) {
+      initRef.current = true
       const mappedInputs = fields.reduce((acc: Inputs, name: string) => {
         acc[name] = data[name] !== undefined ? data[name] : ''
         return acc
       }, {})
-
       setInputs(mappedInputs)
-      setInitialized(true)
     }
-  }, [data, fields, initialized])
+  }, [data, fields])
 
   const handleInput = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target

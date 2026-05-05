@@ -30,12 +30,12 @@ const ListingDetailsClient = ({ listing }: { listing: any | null }) => {
 
   return (
     <>
-      <div className="h-[420px] w-full relative">
+      <div className="h-105 w-full relative">
         <SingleListingMap
           latitude={listing?.map?.latitude || 0}
           longitude={listing?.map?.longitude || 0}
         />
-        <div className="max-w-screen-md px-3 1240:px-0 990:max-w-[990px] lg:max-w-1200 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full">
+        <div className="max-w-3xl px-3 1240:px-0 990:max-w-247.5 lg:max-w-1200 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full">
           <div className="max-w-screen-sm bg-black bg-opacity-70">
             <div className=" text-white p-4">
               <h2 className="text-4xl font-bold mb-2">
@@ -51,7 +51,7 @@ const ListingDetailsClient = ({ listing }: { listing: any | null }) => {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-md px-3 1240:px-0 990:max-w-[990px] lg:max-w-1200 mx-auto w-full">
+      <div className="max-w-3xl px-3 1240:px-0 990:max-w-247.5 lg:max-w-1200 mx-auto w-full">
         <div className="bg-[#f8f8f8] gap-y-3 px-5 py-3 mb-16 flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="gap-y-4 sm:gap-8 flex flex-col sm:flex-row sm:items-center">
             <SqFtBedroomsAndBathroomsBox
@@ -119,8 +119,8 @@ const ListingDetailsClient = ({ listing }: { listing: any | null }) => {
                 day: 'numeric'
               })}
               . Some properties which appear for sale on this web site may subsequently have sold or
-              may no longer be available. The listing broker's offer of compensation is made only to
-              participants of the MLS where the listing is filed. Please contact{' '}
+              may no longer be available. The listing broker&apos;s offer of compensation is made
+              only to participants of the MLS where the listing is filed. Please contact{' '}
               {listing?.agents?.[0]?.name || 'the listing agent'} directly for additional
               information pertaining to the status and availability of properties displayed on this
               website.

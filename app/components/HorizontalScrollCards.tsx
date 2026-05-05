@@ -21,7 +21,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({ items, ti
       {/* Horizontal Scroll Container */}
       <div className="overflow-x-auto scrollbar-hide -mx-3 px-3">
         <div className="flex pb-4">
-          {items.map((property, index) => {
+          {items?.map((property, index) => {
             const fullAddress = [
               property?.address?.streetNumber,
               property?.address?.streetName,
@@ -34,10 +34,10 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({ items, ti
               <Link
                 key={property.mlsNumber}
                 href={`/listings/${property?.mlsNumber}`}
-                className="flex-shrink-0 w-[350px] sm:w-[400px] h-[650px] bg-white shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                className="shrink-0 w-87.5 sm:w-100 h-162.5 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
               >
                 {/* Image Section */}
-                <div className="relative w-full h-64 flex-shrink-0">
+                <div className="relative w-full h-64 shrink-0">
                   {property?.images && property.images.length > 0 ? (
                     <>
                       <Picture
@@ -60,7 +60,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({ items, ti
                     </>
                   ) : (
                     // No image placeholder
-                    <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <div className="w-full h-full bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                       <div className="text-center">
                         <svg
                           className="w-16 h-16 mx-auto mb-2 text-gray-400"
@@ -104,7 +104,7 @@ const HorizontalScrollCards: React.FC<HorizontalScrollCardsProps> = ({ items, ti
 
                   {/* Address */}
                   <div className="flex items-start gap-2 mb-3">
-                    <MapPin className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                    <MapPin className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
                     <p className="text-gray-600 text-sm line-clamp-2">
                       {fullAddress}, {property?.address?.city}, {property?.address?.state}{' '}
                       {property?.address?.zip}

@@ -181,20 +181,6 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
             ))}
           </select>
         </div>
-        {/* <DualSlider
-          min={0}
-          max={10000}
-          value={[(inputs.minSqft as number) || 0, (inputs.maxSqft as number) || 10000]}
-          onInputChange={handleSqFtSliderChange}
-          text="Size (sqft)"
-        />
-        <DualSlider
-          min={0}
-          max={10}
-          value={[(inputs.minAcres as number) || 0, (inputs.maxAcres as number) || 10]}
-          onInputChange={handleLandAreaSliderChange}
-          text="Land Area (acres)"
-        /> */}
         <input
           name="mlsNumber"
           id="mlsNumber"

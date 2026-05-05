@@ -139,7 +139,8 @@ const ListingImageCarousel: FC<ListingImageCarouselProps> = ({ images }) => {
               </button>
             </div>
 
-            <img
+            <Picture
+              priority
               src={`https://cdn.repliers.io/${images[currentIndex]}`}
               alt={`Property image ${currentIndex + 1}`}
               className="max-w-[90%] max-h-[90%] object-contain"

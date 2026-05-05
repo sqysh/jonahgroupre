@@ -70,30 +70,20 @@ model Log {
   updatedAt DateTime @updatedAt
 }
 
-// Page Content
-model Page {
-  id        String  @id @default(cuid())
-  slug      String  @unique
-  content   Json
-  createdBy String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model ContactSubmission {
   id           String   @id @default(cuid())
   firstName    String
   lastName     String
-  email        String
-  phoneNumber  String
-  propertyType String? // interested property type
+  email        String?
+  phoneNumber  String?
+  propertyType String? // buy, sell, both
   priceRange   String? // budget range
   timeframe    String? // when looking to buy/sell
   subject      String
   message      String
   status       String   @default("new") // new, contacted, closed
-  source       String   @default("contact-form") // where submission came from
+  source       String   @default("contact-form")
+  ipAddress    String? // spam protection / audit trail
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
