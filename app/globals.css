@@ -1,30 +1,135 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-footer-p: #858585;
+  /* ─── PRIMARY ACCENT ─────────────────────────────────────────────────────── */
+  --color-primary-light: #65a30d; /* lime-600 — passes 4.5:1 on white */
+  --color-primary-dark: #a3e635; /* lime-400 — passes 4.5:1 on dark */
 
-  /* Font sizes */
-  --text-11: 0.6875rem;
-  --text-13: 0.8125rem;
-  --text-15: 0.9375rem;
+  /* ─── SECONDARY ACCENT ───────────────────────────────────────────────────── */
+  --color-secondary-light: #4d7c0f; /* lime-700 */
+  --color-secondary-dark: #bef264; /* lime-300 */
 
-  /* Font families */
+  /* ─── TOP UTILITY BAR ────────────────────────────────────────────────────── */
+  --color-topbar-light: #1a1a1a;
+  --color-topbar-dark: #0a0a0a;
+
+  /* ─── MAIN NAV BAR ───────────────────────────────────────────────────────── */
+  --color-navbar-light: #ffffff;
+  --color-navbar-dark: #0f0f0f;
+
+  /* ─── PAGE BACKGROUND ────────────────────────────────────────────────────── */
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #0f0f0f;
+
+  /* ─── CARD / SURFACE ─────────────────────────────────────────────────────── */
+  --color-surface-light: #f5f5f5;
+  --color-surface-dark: #1a1a1a;
+
+  /* ─── SURFACE 2 ──────────────────────────────────────────────────────────── */
+  --color-surface2-light: #eeeeee;
+  --color-surface2-dark: #242424;
+
+  /* ─── BUTTONS ────────────────────────────────────────────────────────────── */
+  --color-button-light: #65a30d;
+  --color-button-alt-light: #4d7c0f;
+  --color-button-dark: #84cc16;
+  --color-button-alt-dark: #65a30d;
+
+  /* ─── CARD ALTERNATE ─────────────────────────────────────────────────────── */
+  --color-card-alt-light: #1a1a1a; /* near black */
+  --color-card-alt-dark: #2e2e2e; /* dark gray */
+
+  /* ─── BORDERS ────────────────────────────────────────────────────────────── */
+  --color-border-light: #e0e0e0;
+  --color-border-dark: #2e2e2e;
+
+  /* ─── BORDER SUBTLE ──────────────────────────────────────────────────────── */
+  --color-border-subtle-light: #f0f0f0;
+  --color-border-subtle-dark: #1e1e1e;
+
+  /* ─── TEXT ───────────────────────────────────────────────────────────────── */
+  --color-text-light: #111111;
+  --color-text-dark: #f0f0f0;
+
+  /* ─── SECONDARY TEXT ─────────────────────────────────────────────────────── */
+  --color-text2-light: #444444;
+  --color-text2-dark: #c0c0c0;
+
+  /* ─── MUTED TEXT ─────────────────────────────────────────────────────────── */
+  --color-muted-light: #71717a;
+  --color-muted-dark: #a3e635;
+
+  /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+  --color-footer-light: #111111;
+  --color-footer-dark: #0a0a0a;
+
+  /* ─── FOOTER TEXT ────────────────────────────────────────────────────────── */
+  --color-footer-text-light: #858585;
+  --color-footer-text-dark: #858585;
+
+  /* ─── STAT LABELS ────────────────────────────────────────────────────────── */
+  --color-stat-label-light: #52525b;
+  --color-stat-label-dark: #a3e635;
+
+  /* ─── ON-DARK TEXT ───────────────────────────────────────────────────────── */
+  --color-on-dark: #a1a1aa;
+
+  /* ─── INPUT ──────────────────────────────────────────────────────────────── */
+  --color-input-bg-light: #ffffff;
+  --color-input-bg-dark: #1a1a1a;
+  --color-input-border-light: #d0d0d0;
+  --color-input-border-dark: #2e2e2e;
+  --color-input-text-light: #111111;
+  --color-input-text-dark: #f0f0f0;
+  --color-placeholder-light: #9b9fa4;
+  --color-placeholder-dark: #666666;
+
+  /* ─── LEGACY / NAMED ─────────────────────────────────────────────────────── */
+  --color-accent: #f5f5f5;
+  --color-accent-dark: #1a1a1a;
+  --color-chartreuse: #84cc16;
+  --color-chartreuse-hover: #65a30d;
+  --color-chartreuse-dark-hover: #a3e635;
+
+  /* ─── FONTS ──────────────────────────────────────────────────────────────── */
   --font-poppins: "Poppins", sans-serif;
   --font-poppins-medium: "Poppins-Medium", sans-serif;
   --font-poppins-semibold: "Poppins-SemiBold", sans-serif;
   --font-poppins-bold: "Poppins-Bold", sans-serif;
 
-  /* Max widths */
-  --width-1160: 1160px;
-  --width-1200: 1200px;
-
-  /* Breakpoints */
-  --breakpoint-xs: 639px;
+  /* ─── BREAKPOINTS ────────────────────────────────────────────────────────── */
+  --breakpoint-xxs: 320px;
+  --breakpoint-xs: 480px;
+  --breakpoint-639: 639px;
   --breakpoint-990: 990px;
   --breakpoint-1240: 1240px;
   --breakpoint-1290: 1290px;
   --breakpoint-1360: 1360px;
+
+  /* ─── TYPE SCALE ─────────────────────────────────────────────────────────── */
+  --text-11: 0.6875rem;
+  --text-13: 0.8125rem;
+  --text-15: 0.9375rem;
+
+  /* ─── MAX WIDTHS ─────────────────────────────────────────────────────────── */
+  --width-1160: 1160px;
+  --width-1200: 1200px;
+
+  /* ─── BOX SHADOWS ────────────────────────────────────────────────────────── */
+  --box-shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --box-shadow-card-dark: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --box-shadow-btn: 0 10px 15px -4px rgba(101, 163, 13, 0.4);
+}
+
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+html.dark body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
 }
 
 .form-control:-webkit-autofill {

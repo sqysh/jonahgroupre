@@ -27,7 +27,7 @@ const SingleItemCarousel: React.FC<SingleItemCarouselProps> = ({
   )
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-1200 mx-auto">
+    <div className="relative flex flex-col items-center w-full max-w-300 mx-auto">
       <div className="overflow-hidden w-full">
         <div
           className="flex transition-transform duration-500"

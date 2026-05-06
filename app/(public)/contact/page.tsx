@@ -1,98 +1,55 @@
 'use client'
 
-import Banner from '@/app/components/common/Banner'
-import Picture from '@/app/components/common/Picture'
-import TitleWithOrangeLine from '@/app/components/listings/TitleWithOrangeLine'
-import SingleListingMap from '@/app/components/SingleMapListing'
-import servicedCities from '@/app/lib/constants/serviced-cities'
-import { MapPin, AtSign, Phone } from 'lucide-react'
+import { ContactForm } from '@/app/components/forms/ContactForm'
+import { Send } from 'lucide-react'
 import { useState } from 'react'
 
-const contactData = [
-  {
-    icon: MapPin,
-    title: 'Head Office',
-    text: `100 Sagamore St Lynn, MA 01902`
-  },
-  {
-    icon: Phone,
-    title: 'Phone Number',
-    text: '781-718-7665'
-  },
-  {
-    icon: AtSign,
-    title: 'E-mail Address',
-    text: 'ejonah@c21ne.com'
-  }
-]
-
 const Contact = () => {
-  const [city, setCity] = useState('Swampscott')
-  const selectedCity = servicedCities.find((obj) => obj.city === city)
+  const [submitted, setSubmitted] = useState(false)
 
   return (
-    <div className="pb-60">
-      <Banner src="/images/perry-ave.jpg" title="Contact" breadcrumb="Contact" />
-      <div className="w-full h-[545px] relative mb-20">
-        <SingleListingMap latitude={42.4699} longitude={-70.9597} />
-      </div>
-      <div className="px-3">
-        <div className="max-w-screen-md  990:max-w-[990px] xl:max-w-1200 mx-auto w-full mb-16">
-          <div className="grid grid-cols-12 md:gap-x-5 lg:gap-x-10">
-            <div className="col-span-12 990:col-span-6 flex flex-col mb-16 lg:mb-0">
-              <TitleWithOrangeLine section="Our Information" />
-              {contactData.map((obj, i) => {
-                const IconComponent = obj.icon
-                return (
-                  <div key={i} className="grid grid-cols-5 mb-7">
-                    <div className="col-span-2 sm:col-span-1 md:col-span-1">
-                      <div className="w-20 h-20 aspect-square rounded-full bg-zinc-800 flex items-center justify-center hover:bg-orange-500 duration-200">
-                        <IconComponent className="text-white w-5 h-5" />
-                      </div>
-                    </div>
-                    <div className="col-span-3 sm:col-span-4 md:col-span-4">
-                      <h5 className="text-lg font-bold mb-3">{obj.title}</h5>
-                      <p className="text-xs text-[#8a8a8a] leading-6">{obj.text}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-            <div className="col-span-12 990:col-span-6">
-              <TitleWithOrangeLine section="Our Cities" />
-              <div className="grid grid-cols-12">
-                <div className="col-span-12 md:col-span-3 flex flex-col gap-y-0.5 order-2 md:order-1">
-                  {servicedCities.map((obj, i) => (
-                    <div
-                      onClick={() => setCity(obj.city)}
-                      key={i}
-                      className={`w-full px-2 py-3.5 font-medium cursor-pointer text-xs lg:text-base ${
-                        city === obj.city
-                          ? 'bg-orange-500 text-[#ffedd8]'
-                          : 'bg-zinc-800 text-[#BABABA]'
-                      }`}
-                    >
-                      {obj.city}
-                    </div>
-                  ))}
-                </div>
-                <div className="col-span-12 md:col-span-9 h-full w-full bg-[#f8f8f8] md:p-5 flex flex-col justify-evenly order-1 md:order-2">
-                  <Picture
-                    src={selectedCity?.img || ''}
-                    alt={selectedCity?.city || ''}
-                    className="object-cover max-h-80 md:max-h-60 aspect-video md:aspect-auto md:h-1/2 w-full"
-                    priority={false}
-                  />
-                  <div className="relative max-h-80 md:max-h-60 aspect-video md:aspect-auto md:h-1/2 w-full">
-                    <SingleListingMap
-                      latitude={selectedCity?.coordinates.lat || 0}
-                      longitude={selectedCity?.coordinates.long || 0}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div>
+      <div className="px-4 py-16 sm:py-24">
+        <div className="max-w-155 mx-auto w-full">
+          {/* Header */}
+          <div className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold uppercase text-text-light dark:text-text-dark mb-2">
+              Get in Touch
+            </h2>
+            <div
+              className="w-10 h-1 bg-primary-light dark:bg-primary-dark mb-4"
+              aria-hidden="true"
+            />
+            <p className="text-sm text-muted-light dark:text-muted-dark leading-relaxed">
+              Fill out the form below and Eileen will get back to you as soon as possible.
+            </p>
           </div>
+
+          {submitted ? (
+            <div
+              role="alert"
+              className="bg-primary-light/10 dark:bg-primary-dark/10 border border-primary-light dark:border-primary-dark p-10 text-center"
+            >
+              <Send
+                className="w-10 h-10 text-primary-light dark:text-primary-dark mx-auto mb-4"
+                aria-hidden="true"
+              />
+              <p className="text-lg font-bold text-text-light dark:text-text-dark mb-2">
+                Message Sent!
+              </p>
+              <p className="text-sm text-muted-light dark:text-muted-dark mb-6">
+                Eileen will be in touch with you shortly.
+              </p>
+              <button
+                onClick={() => setSubmitted(false)}
+                className="text-xs uppercase font-semibold text-primary-light dark:text-primary-dark hover:underline focus-visible:outline-none focus-visible:underline"
+              >
+                Send another message
+              </button>
+            </div>
+          ) : (
+            <ContactForm setSubmitted={setSubmitted} />
+          )}
         </div>
       </div>
     </div>

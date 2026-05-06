@@ -44,14 +44,17 @@ model VerificationToken {
 model User {
   id    String @id @default(cuid())
   email String @unique
+  role  Role   @default(ADMIN)
 
   // Generic person info (optional)
-  firstName String?
-  lastName  String?
-  phone     String?
-
+  firstName     String?
+  lastName      String?
+  phone         String?
+  image         String?
+  lastLoginAt   DateTime?
+  emailVerified DateTime?
   // Flexible user-specific data
-  metadata Json? // ← Future-proof
+  metadata      Json? // ← Future-proof
 
   accounts Account[]
   sessions Session[]
@@ -62,12 +65,18 @@ model User {
 
 model Log {
   id        String   @id @default(cuid())
-  level     String
-  message   String
-  metadata  Json?
-  userId    String?
+  action    String // "CONTACT_FORM_SUBMITTED", "USER_LOGIN", "SUBMISSION_STATUS_CHANGED"
+  message   String // "John Doe filled out a contact form"
+  entity    String? // "ContactSubmission", "User"
+  entityId  String? // the cuid of the related record
+  metadata  Json? // { device: "Mobile", browser: "Safari", status: { from: "new", to: "contacted" } }
+  ipAddress String?
+  userAgent String?
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  @@index([action])
+  @@index([entity, entityId])
+  @@index([createdAt])
 }
 
 model ContactSubmission {
@@ -90,4 +99,9 @@ model ContactSubmission {
   @@index([email])
   @@index([status])
   @@index([createdAt])
+}
+
+enum Role {
+  SUPER_USER
+  ADMIN
 }

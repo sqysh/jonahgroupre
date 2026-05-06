@@ -159,42 +159,35 @@ const DetailsGridOne = ({ listing }: { listing: RepliersListing }) => {
 
   return (
     <div className="w-full mb-16">
-      <div className="bg-zinc-900 text-white h-[58px] mb-7 flex">
-        <button
-          onClick={() => setSection('Overview')}
-          className={`${
-            section === 'Overview' ? 'bg-orange-500' : 'hover:bg-zinc-800'
-          } px-8 h-full text-sm font-medium transition-colors`}
-        >
-          Overview
-        </button>
-        <button
-          onClick={() => setSection('Location')}
-          className={`${
-            section === 'Location' ? 'bg-orange-500' : 'hover:bg-zinc-800'
-          } px-8 h-full text-sm font-medium transition-colors`}
-        >
-          Location
-        </button>
-        <button
-          onClick={() => setSection('Additional')}
-          className={`${
-            section === 'Additional' ? 'bg-orange-500' : 'hover:bg-zinc-800'
-          } px-8 h-full text-sm font-medium transition-colors`}
-        >
-          Additional
-        </button>
+      {/* Tab Bar */}
+      <div className="bg-surface2-light dark:bg-surface2-dark h-14.5 mb-7 flex border border-border-light dark:border-border-dark">
+        {['Overview', 'Location', 'Additional'].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setSection(tab)}
+            aria-pressed={section === tab}
+            className={`px-6 sm:px-8 h-full text-sm font-semibold uppercase tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light dark:focus-visible:ring-primary-dark focus-visible:ring-inset ${
+              section === tab
+                ? 'bg-primary-light dark:bg-primary-dark text-white dark:text-bg-dark'
+                : 'text-muted-light dark:text-muted-dark hover:text-text-light dark:hover:text-text-dark hover:bg-border-subtle-light dark:hover:bg-border-subtle-dark'
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 text-[#757575] text-sm">
+
+      {/* Data Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-px text-sm bg-border-light dark:bg-border-dark">
         {currentData.map((obj, i) => (
           <div
-            className={`${i % 2 === 0 ? 'xs:bg-[#f8f8f8]' : ''} ${
-              Math.floor(i / 2) % 2 === 0 ? 'sm:bg-[#f8f8f8]' : ''
-            } flex items-center justify-between py-2 px-3 gap-7`}
             key={i}
+            className="bg-bg-light dark:bg-bg-dark flex items-center justify-between py-2.5 px-3 gap-7 border-b border-border-light dark:border-border-dark"
           >
-            <strong className="text-gray-700">{obj?.textKey}</strong>
-            <p className="text-right">{obj.value}</p>
+            <strong className="text-text-light dark:text-text-dark font-semibold">
+              {obj?.textKey}
+            </strong>
+            <p className="text-muted-light dark:text-muted-dark text-right">{obj.value}</p>
           </div>
         ))}
       </div>

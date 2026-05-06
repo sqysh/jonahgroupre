@@ -90,10 +90,9 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
       <div className={styles.form}>
         <select
           name="class"
-          id="class"
           onChange={handleSelect}
           value={(inputs.class as string) || ''}
-          className={`${styles.inputs}`}
+          className={styles.inputs}
           aria-label="Property Type"
           tabIndex={0}
         >
@@ -103,12 +102,12 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
             </option>
           ))}
         </select>
+
         <select
           name="status"
-          id="status"
           onChange={handleSelect}
           value={(inputs.status as string) || ''}
-          className={`${styles.inputs}`}
+          className={styles.inputs}
           aria-label="Property Status"
           tabIndex={0}
         >
@@ -118,12 +117,12 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
             </option>
           ))}
         </select>
+
         <select
           name="bedrooms"
-          id="bedrooms"
           onChange={handleSelect}
           value={(inputs.bedrooms as string) || ''}
-          className={` ${styles.inputs}`}
+          className={styles.inputs}
           aria-label="Bedrooms"
           tabIndex={0}
         >
@@ -133,12 +132,12 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
             </option>
           ))}
         </select>
+
         <select
           name="totalBaths"
-          id="totalBaths"
           onChange={handleSelect}
           value={(inputs.totalBaths as string) || ''}
-          className={` ${styles.inputs}`}
+          className={styles.inputs}
           aria-label="Bathrooms"
           tabIndex={0}
         >
@@ -149,10 +148,9 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
           ))}
         </select>
 
-        <div className={`${styles.minMaxContainer}`}>
+        <div className={styles.minMaxContainer}>
           <select
             name="minPrice"
-            id="minPrice"
             onChange={handleSelect}
             value={(inputs.minPrice as string) || ''}
             className={`w-full ${styles.inputs}`}
@@ -167,7 +165,6 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
           </select>
           <select
             name="maxPrice"
-            id="maxPrice"
             onChange={handleSelect}
             value={(inputs.maxPrice as string) || ''}
             className={`w-full ${styles.inputs}`}
@@ -181,32 +178,34 @@ const PropertySearchForm: FC<PropertySearchFormProps> = ({ type }) => {
             ))}
           </select>
         </div>
+
         <input
           name="mlsNumber"
-          id="mlsNumber"
           onChange={handleInput}
           value={(inputs.mlsNumber as string) || ''}
-          className={` ${styles.inputs}`}
+          className={styles.inputs}
           aria-label="MLS Number"
           placeholder="MLS Number"
         />
+
         <div className={`${styles.button} flex gap-x-2 items-center w-full justify-end`}>
           <button
             type="submit"
-            className={`gap-1.5 flex justify-center w-28 flex-shrink-0 items-center py-2.5 bg-orange-500 border-2 border-orange-500 group duration-200 hover:bg-transparent`}
+            className="gap-1.5 flex justify-center w-28 shrink-0 items-center py-2.5 bg-primary-light dark:bg-primary-dark border-2 border-primary-light dark:border-primary-dark group duration-200 hover:bg-transparent"
           >
             {type === 'listings' ? (
-              <Filter className="text-sm text-white group-hover:text-orange-500" />
+              <Filter className="text-sm text-white dark:text-bg-dark group-hover:text-primary-light dark:group-hover:text-primary-dark" />
             ) : (
-              <Search className="text-sm text-white group-hover:text-orange-500" />
+              <Search className="text-sm text-white dark:text-bg-dark group-hover:text-primary-light dark:group-hover:text-primary-dark" />
             )}
           </button>
         </div>
+
         {type === 'listings' && (
           <button
             onClick={handleReset}
             type="button"
-            className="bg-gray-200 flex items-center justify-center gap-x-1 px-5 py-2.5 text-gray-700 text-center w-full hover:bg-gray-300 transition-colors"
+            className="bg-surface2-dark flex items-center justify-center gap-x-1 px-5 py-2.5 text-muted-dark text-center w-full hover:bg-border-dark transition-colors duration-200"
           >
             <Rotate3d className="w-3 h-3" />
             <span className="text-sm">Reset</span>

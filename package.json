@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate": "prisma generate"
+    "generate": "prisma generate",
+    "upsert:users": "node prisma/seed.js"
   },
   "dependencies": {
     "@hotjar/browser": "^1.0.9",

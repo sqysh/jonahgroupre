@@ -14,6 +14,7 @@ export async function getAgentListings(params: {
     const queryParams = new URLSearchParams({
       status,
       boardAgentId: EILEEN_BOARD_AGENT_ID,
+      boardId: '68',
       pageNum: page.toString(),
       resultsPerPage: resultsPerPage.toString(),
       sortBy
@@ -27,7 +28,9 @@ export async function getAgentListings(params: {
       next: { revalidate: 3600 }
     })
 
-    if (!res.ok) return null
+    if (!res.ok) {
+      return null
+    }
 
     const data = await res.json()
 

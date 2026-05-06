@@ -11,20 +11,22 @@ const PropertyCardBottomBox: FC<PropertyCardBottomBoxProps> = ({
   return (
     <div
       className={`${
-        index % 2 === 0 ? 'bg-orange-500' : 'bg-zinc-900'
-      } mt-auto h-8 w-full flex items-center justify-between px-3 text-xs text-white`}
+        index % 2 === 0
+          ? 'bg-primary-light dark:bg-primary-dark text-white dark:text-bg-dark'
+          : 'bg-card-alt-light dark:bg-card-alt-dark text-white'
+      } mt-auto h-8 w-full flex items-center justify-between px-3 text-xs`}
     >
       <div className="flex items-center gap-2">
-        <DraftingCompass className="w-4 h-4 text-white" />
-        <p className="text-white font-bold leading-4">{sqFt} SqFt</p>
+        <DraftingCompass className="w-4 h-4" />
+        <p className="font-bold leading-4">{sqFt} SqFt</p>
       </div>
       <div className="flex items-center gap-2">
-        <Bed className="w-4 h-4 text-white" />
-        <p className="text-white font-bold leading-4">{bedrooms || 0}</p>
+        <Bed className="w-4 h-4" />
+        <p className="font-bold leading-4">{bedrooms || 0}</p>
       </div>
       <div className="flex items-center gap-2 pr-6">
-        <ShowerHead className="w-4 h-4 text-white" />
-        <p className="text-white font-bold leading-4">{bathrooms || 0}</p>
+        <ShowerHead className="w-4 h-4" />
+        <p className="font-bold leading-4">{bathrooms || 0}</p>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import 'ol/ol.css'
-import RootLayoutWrapper from './root-layout'
+import { RootLayoutWrapper } from './root-layout'
 
 export const metadata: Metadata = {
   title: 'Eileen Jonah - Realtor® | Century 21 North East | Massachusetts Real Estate',
@@ -113,7 +113,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta property="fb:app_id" content="857941673220898" />
         {/* Structured Data - RealEstateAgent Schema */}
