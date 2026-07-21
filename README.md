@@ -6,7 +6,7 @@
 
 # Century 21 North East
 
-Website and internal management platform for **Century 21 North East Jonah Group Real Eastate**.
+Website and internal management platform for **Century 21 North East Jonah Group Real Estate**.
 
 > Built and maintained by [Sqysh](https://sqysh.com?utm_source=github&utm_medium=referral&utm_campaign=jgre).
 
