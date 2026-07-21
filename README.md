@@ -1,28 +1,33 @@
-# Century 21 North East Real Estate Project
+<p align="center">
+  <a href="https://sqysh.com?utm_source=github&utm_medium=referral&utm_campaign=jgre">
+    <img src="public/sqysh-animated-purple.gif" alt="Sqysh" width="120" />
+  </a>
+</p>
 
-The **Century 21 North East Real Estate Project** is a dynamic web application built on [Next.js](https://nextjs.org) that focuses on providing an exceptional user experience for home buyers and sellers. This project aims to integrate with **IDX Broker**, allowing users to seamlessly search and retrieve residential real estate listings.
+# Century 21 North East
 
-Utilizing **Redux Toolkit** for state management and **Redux Toolkit Query** for efficient data fetching, the application is designed to deliver fast and responsive performance.
+Website and internal management platform for **Century 21 North East Jonah Group Real Eastate**.
 
-With a tailored user interface that emphasizes ease of navigation and comprehensive search functionalities, the Century 21 North East project seeks to enhance the real estate experience for both agents and clients. Whether users are looking to buy their dream home or sell a property, this application will serve as a valuable resource in the real estate market.
+> Built and maintained by [Sqysh](https://sqysh.com?utm_source=github&utm_medium=referral&utm_campaign=jgre).
 
-## Features
+---
 
-- **IDX Broker Integration**: The application will connect to IDX Broker to retrieve residential real estate listings, enabling a comprehensive search experience for users.
-- **State Management with Redux Toolkit**: Utilizing Redux Toolkit and Redux Toolkit Query for efficient state management and data fetching.
-- **Real Estate-Focused UI**: Tailored for showcasing real estate properties, including dynamic search functionality and property filters.
+## Notice
 
-## Resources
+**This is proprietary software.**
 
-To learn more about the technologies used:
+The source is visible for reference only. It is _not_ open source, _not_ licensed for
+reuse, and _not_ intended to be cloned, forked, or adapted in whole or in part.
 
-- [Next.js Documentation](https://nextjs.org/docs) – explore the full feature set and APIs.
-- [Next.js GitHub](https://github.com/vercel/next.js) – contribute or track updates.
-- [Interactive Tutorial](https://nextjs.org/learn) – step-by-step learning on building with Next.js.
-- [IDX Broker Website](https://www.idxbroker.com) – learn more about IDX Broker and its capabilities.
+> No permission is granted to copy, modify, distribute, or use this code or any portion
+> of it. All rights reserved.
 
-## Deployment
+No issue tracker, no contribution process, no support for third-party use.
 
-The project can be easily deployed using the [Vercel Platform](https://vercel.com), which provides seamless integration with Next.js.
+Copyright © 2026 Sqysh. All rights reserved.
 
-To learn more about deployment options, check out the [Next.js deployment guide](https://nextjs.org/docs/app/building-your-application/deploying).
+---
+
+## Contact
+
+[greg@sqysh.com](mailto:greg@sqysh.com)
