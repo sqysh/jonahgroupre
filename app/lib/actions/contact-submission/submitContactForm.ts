@@ -2,6 +2,7 @@
 
 import prisma from '@/prisma/client'
 import { createLog } from '../log/createLog'
+import { sendContactSubmission } from '../../email/sendContactSubmission'
 
 export async function submitContactForm(data: {
   firstName: string
@@ -27,6 +28,12 @@ export async function submitContactForm(data: {
         propertyType: data.propertyType,
         timeframe: data.timeframe
       }
+    })
+
+    await sendContactSubmission({
+      id: submission.id,
+      ...data,
+      createdAt: submission.createdAt
     })
 
     return { success: true }

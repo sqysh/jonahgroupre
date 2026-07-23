@@ -13,3 +13,17 @@ export interface IContactSubmission {
   source: string
   createdAt: Date
 }
+
+export interface ContactSubmissionEmailProps {
+  id: string
+  firstName: string
+  lastName: string
+  email?: string
+  phoneNumber?: string
+  propertyType?: string
+  priceRange?: string
+  timeframe?: string
+  subject: string
+  message: string
+  createdAt?: Date
+}
