@@ -1,5 +1,5 @@
 import { PublicSoldClient } from '@/app/components/pages/PublicSoldClient'
-import { getAgentListings } from '@/app/lib/actions/getAgentListings'
+import { getAgentListings } from '@/app/lib/actions/repliers/getAgentListings'
 import { Suspense } from 'react'
 
 export default async function PublicSoldPage({

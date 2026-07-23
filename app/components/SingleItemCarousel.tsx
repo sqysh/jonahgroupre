@@ -4,7 +4,7 @@ import Link from 'next/link'
 import PropertyCardBottomBox from './property-card/PropertyCardBottomBox'
 import addCommas from '../lib/utils/addCommas'
 import { MapPin, Tag, Calendar, User } from 'lucide-react'
-import { RepliersListing } from '../lib/types/repliers'
+import { RepliersListing } from '../lib/types/repliers.types'
 
 interface SingleItemCarouselProps {
   items: RepliersListing[]

@@ -1,6 +1,6 @@
-import { getAgentListings } from './lib/actions/getAgentListings'
-import { getListings } from './lib/actions/getListings'
-import HomeClient from './components/pages/HomeClient'
+import { getAgentListings } from '../../lib/actions/repliers/getAgentListings'
+import { getListings } from '../../lib/actions/repliers/getListings'
+import HomeClient from './HomeClient'
 import { Suspense } from 'react'
 
 export const revalidate = 3600

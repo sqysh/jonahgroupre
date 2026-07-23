@@ -1,6 +1,6 @@
 'use client'
 
-import { RepliersListing } from '@/app/lib/types/repliers'
+import { RepliersListing } from '@/app/lib/types/repliers.types'
 import { FC } from 'react'
 
 interface DetailsGridThreeProps {

@@ -20,7 +20,7 @@ export function RootLayoutWrapper({ children }: { children: ReactNode }) {
       <ThemeProvider>
         <NavigationDrawer />
         {showLink(pathname) && <Header />}
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         {showLink(pathname) && <Footer />}
       </ThemeProvider>
     </Provider>

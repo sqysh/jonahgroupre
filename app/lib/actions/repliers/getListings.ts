@@ -1,3 +1,5 @@
+import { RepliersListing } from '../../types/repliers.types'
+
 interface GetListingsParams {
   page?: number
   resultsPerPage?: number
@@ -20,12 +22,12 @@ interface GetListingsParams {
   mlsNumber?: string
 }
 
-interface RepliersResponse {
+export interface RepliersResponse {
   page: number
   numPages: number
   pageSize: number
   count: number
-  listings: any[]
+  listings: RepliersListing[]
 }
 
 export async function getListings(

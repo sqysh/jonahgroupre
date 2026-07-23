@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
-import FindAProperty from '../home-page/FindAProperty'
-import HomeHero from '../home-page/HomeHero'
-import PropertySearch from '../home-page/PropertySearch'
+import FindAProperty from '../../components/home-page/FindAProperty'
+import HomeHero from '../../components/home-page/HomeHero'
+import PropertySearch from '../../components/home-page/PropertySearch'
 
 export const metadata: Metadata = {
   title: 'Eileen Jonah - Realtor® | Century 21 North East | Massachusetts Real Estate',

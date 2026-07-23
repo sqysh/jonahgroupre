@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import ListingsPropertyCard from '../listings/ListingsPropertyCard'
-import { RepliersListing } from '@/app/lib/types/repliers'
+import { RepliersListing } from '@/app/lib/types/repliers.types'
 
 export function PublicSoldClient({ data }: any) {
   const router = useRouter()

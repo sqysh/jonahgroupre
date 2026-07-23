@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import ListingsPropertyCard from '../listings/ListingsPropertyCard'
-import { RepliersListing } from '@/app/lib/types/repliers'
+import { RepliersListing } from '@/app/lib/types/repliers.types'
 import { useState } from 'react'
 import { ChevronDown, Filter, Rotate3d } from 'lucide-react'
 import { MA_COUNTIES } from '@/app/(public)/listings/page'

@@ -1,6 +1,6 @@
 'use client'
 
-import { RepliersListing } from '@/app/lib/types/repliers'
+import { RepliersListing } from '@/app/lib/types/repliers.types'
 import { useState } from 'react'
 
 const DetailsGridOne = ({ listing }: { listing: RepliersListing }) => {
@@ -157,37 +157,55 @@ const DetailsGridOne = ({ listing }: { listing: RepliersListing }) => {
         ? listingLocationData(listing)
         : listingOverviewData(listing)
 
+  const isUrl = (val: string | number) =>
+    typeof val === 'string' && (val.startsWith('http') || val.startsWith('www'))
+
   return (
     <div className="w-full mb-16">
-      {/* Tab Bar */}
-      <div className="bg-surface2-light dark:bg-surface2-dark h-14.5 mb-7 flex border border-border-light dark:border-border-dark">
-        {['Overview', 'Location', 'Additional'].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setSection(tab)}
-            aria-pressed={section === tab}
-            className={`px-6 sm:px-8 h-full text-sm font-semibold uppercase tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light dark:focus-visible:ring-primary-dark focus-visible:ring-inset ${
-              section === tab
-                ? 'bg-primary-light dark:bg-primary-dark text-white dark:text-bg-dark'
-                : 'text-muted-light dark:text-muted-dark hover:text-text-light dark:hover:text-text-dark hover:bg-border-subtle-light dark:hover:bg-border-subtle-dark'
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+      {/* Tab Bar — scrollable on tiny screens */}
+      <div className="mb-7 border border-border-light dark:border-border-dark overflow-x-auto">
+        <div className="flex min-w-max bg-surface2-light dark:bg-surface2-dark h-12">
+          {['Overview', 'Location', 'Additional'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setSection(tab)}
+              aria-pressed={section === tab}
+              className={`px-5 h-full text-xs font-semibold uppercase tracking-wide transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light dark:focus-visible:ring-primary-dark focus-visible:ring-inset ${
+                section === tab
+                  ? 'bg-primary-light dark:bg-primary-dark text-white dark:text-bg-dark'
+                  : 'text-muted-light dark:text-muted-dark hover:text-text-light dark:hover:text-text-dark hover:bg-border-subtle-light dark:hover:bg-border-subtle-dark'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Data Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-px text-sm bg-border-light dark:bg-border-dark">
+      <div className="divide-y divide-border-light dark:divide-border-dark border border-border-light dark:border-border-dark">
         {currentData.map((obj, i) => (
           <div
             key={i}
-            className="bg-bg-light dark:bg-bg-dark flex items-center justify-between py-2.5 px-3 gap-7 border-b border-border-light dark:border-border-dark"
+            className="flex flex-col xxs:flex-row xxs:items-start xxs:justify-between gap-0.5 xxs:gap-4 py-2.5 px-3 text-sm odd:bg-surface-light dark:odd:bg-surface-dark even:bg-bg-light dark:even:bg-bg-dark"
           >
-            <strong className="text-text-light dark:text-text-dark font-semibold">
-              {obj?.textKey}
+            <strong className="text-text-light dark:text-text-dark font-semibold shrink-0 xxs:w-2/5">
+              {obj.textKey}
             </strong>
-            <p className="text-muted-light dark:text-muted-dark text-right">{obj.value}</p>
+            {isUrl(obj.value) ? (
+              <a
+                href={String(obj.value)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-light dark:text-primary-dark underline break-all xxs:text-right xxs:w-3/5"
+              >
+                {String(obj.value)}
+              </a>
+            ) : (
+              <p className="text-muted-light dark:text-muted-dark wrap-break-word xxs:text-right xxs:w-3/5">
+                {obj.value}
+              </p>
+            )}
           </div>
         ))}
       </div>

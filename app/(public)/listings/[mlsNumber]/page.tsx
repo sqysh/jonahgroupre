@@ -1,4 +1,4 @@
-import { getListingByMlsNumber } from '@/app/lib/actions/getListingByMlsNumber'
+import { getListingByMlsNumber } from '@/app/lib/actions/repliers/getListingByMlsNumber'
 import ListingDetailsClient from '@/app/components/pages/ListingDetailsClient'
 
 export default async function ListingDetailsPage({

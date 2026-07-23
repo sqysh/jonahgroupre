@@ -1,4 +1,4 @@
-import { ContactSubmissionEmailProps } from '@/app/types/contact-submission.types'
+import { ContactSubmissionEmailProps } from '@/app/lib/types/contact-submission.types'
 
 export const contactSubmissionTemplate = ({
   id,

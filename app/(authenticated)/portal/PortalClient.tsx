@@ -23,7 +23,7 @@ import {
   Trash2
 } from 'lucide-react'
 import { signOut } from 'next-auth/react'
-import { IContactSubmission } from '@/app/types/contact-submission.types'
+import { IContactSubmission } from '@/app/lib/types/contact-submission.types'
 import { updateUserName } from '@/app/lib/actions/user/updateUserName'
 import { updateSubmissionStatus } from '@/app/lib/actions/contact-submission/updateContactSubmission'
 import Link from 'next/link'

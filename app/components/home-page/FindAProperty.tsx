@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { underline } from '../common/styles'
 import { motion } from 'framer-motion'
 import { buttonVariants, containerVariants, titleVariants } from '@/app/lib/constants/motion'
-import { RepliersListing } from '@/app/lib/types/repliers'
+import { RepliersListing } from '@/app/lib/types/repliers.types'
 import HorizontalScrollCards from '../HorizontalScrollCards'
 
 const FindAProperty = ({ allListings }: { allListings: RepliersListing[] }) => {

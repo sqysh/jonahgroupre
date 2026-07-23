@@ -1,6 +1,6 @@
 'use server'
 
-import { LogAction } from '@/app/types/log.types'
+import { LogAction } from '@/app/lib/types/log.types'
 import { prisma } from '@/prisma/client'
 import { Prisma } from '@prisma/client'
 
