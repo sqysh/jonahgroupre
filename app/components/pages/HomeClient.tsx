@@ -19,7 +19,7 @@ const HomeClient = ({ agentListings, allListings }: any) => {
     <div className="min-h-screen w-full">
       <HomeHero listing={agentListings?.listings[0]} />
       <PropertySearch />
-      <FindAProperty allListings={allListings?.listings} />
+      <FindAProperty allListings={agentListings?.listings ?? allListings} />
     </div>
   )
 }

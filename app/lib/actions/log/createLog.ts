@@ -1,7 +1,7 @@
 'use server'
 
 import { LogAction } from '@/app/types/log.types'
-import prisma from '@/prisma/client'
+import { prisma } from '@/prisma/client'
 import { Prisma } from '@prisma/client'
 
 type LogMetadata = Record<string, string | number | boolean | null | undefined>
@@ -37,8 +37,7 @@ export async function createLog({
         userAgent: userAgent ?? null
       }
     })
-  } catch (error) {
+  } catch {
     // Logs should never break the main flow
-    console.error('[createLog] Failed to write log:', error)
   }
 }
